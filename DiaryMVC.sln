@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31605.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiaryMVC.Web", "DiaryMVC.Web\DiaryMVC.Web.csproj", "{26FC7C22-574E-4016-9B9A-2FE88CF496C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{D6BF2BD3-92FE-4FBB-A840-7E4E5AC0198A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{18F1CE14-5D7C-4227-B8C3-770FBE6BF37F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{8D20BC41-EFDF-4BE8-812C-020B3CE3601E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{E3035EC3-1F0D-4EA1-A352-220A5323FF2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{F4C5BE86-4F38-4A84-8FEE-AB2F18570953}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiaryMVC.Application", "DiaryMVC.Application\DiaryMVC.Application.csproj", "{422A9401-6738-4BFC-B976-F0A15E7A6CF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiaryMVC.Domain", "DiaryMVC.Domain\DiaryMVC.Domain.csproj", "{A536D692-ED66-4151-AAD6-FC185D856467}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiaryMVC.Infrastructure", "DiaryMVC.Infrastructure\DiaryMVC.Infrastructure.csproj", "{5387A1F2-D4BA-4B7B-BA68-3854091DA895}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26FC7C22-574E-4016-9B9A-2FE88CF496C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26FC7C22-574E-4016-9B9A-2FE88CF496C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26FC7C22-574E-4016-9B9A-2FE88CF496C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26FC7C22-574E-4016-9B9A-2FE88CF496C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{422A9401-6738-4BFC-B976-F0A15E7A6CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{422A9401-6738-4BFC-B976-F0A15E7A6CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{422A9401-6738-4BFC-B976-F0A15E7A6CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{422A9401-6738-4BFC-B976-F0A15E7A6CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A536D692-ED66-4151-AAD6-FC185D856467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A536D692-ED66-4151-AAD6-FC185D856467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A536D692-ED66-4151-AAD6-FC185D856467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A536D692-ED66-4151-AAD6-FC185D856467}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5387A1F2-D4BA-4B7B-BA68-3854091DA895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5387A1F2-D4BA-4B7B-BA68-3854091DA895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5387A1F2-D4BA-4B7B-BA68-3854091DA895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5387A1F2-D4BA-4B7B-BA68-3854091DA895}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{26FC7C22-574E-4016-9B9A-2FE88CF496C2} = {D6BF2BD3-92FE-4FBB-A840-7E4E5AC0198A}
+		{422A9401-6738-4BFC-B976-F0A15E7A6CF5} = {8D20BC41-EFDF-4BE8-812C-020B3CE3601E}
+		{A536D692-ED66-4151-AAD6-FC185D856467} = {18F1CE14-5D7C-4227-B8C3-770FBE6BF37F}
+		{5387A1F2-D4BA-4B7B-BA68-3854091DA895} = {E3035EC3-1F0D-4EA1-A352-220A5323FF2D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5175471C-45AF-4957-B72D-441016AFF280}
+	EndGlobalSection
+EndGlobal

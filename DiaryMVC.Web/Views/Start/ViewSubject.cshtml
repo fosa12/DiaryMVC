@@ -1,0 +1,75 @@
+﻿@model DiaryMVC.Application.ViewModels.Task.SubjectDeatilsVm
+
+@{
+    ViewData["Title"] = "Information about subject";
+}
+
+<h1>Information about subject</h1>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.ShortName)</h4>
+    <hr />
+    <dl class="row">
+@*        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>*@
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+@*        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ShortName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ShortName)
+        </dd>*@
+    </dl>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Task Name</th>
+            <th scope="col">Deadline</th>
+            <th scope="col">Task Type</th>
+            <th scope="col">In Progres</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach (var item in Model.Tasks)
+        {
+            <tr>
+                <th scope="row">@Html.DisplayFor(itemModel => item.Name)</th>
+                <td>@Html.DisplayFor(itemModel => item.Deadline)</td>
+                <td>@Html.DisplayFor(itemModel=> item.TaskType.Name)</td>
+                <td>@Html.DisplayFor(itemModel=> item.InProgres)</td>
+                <td>
+                    @if (item.InProgres == false)
+                   {
+                        @Html.ActionLink("Start Task","StartTask","Task", new {id = item.Id})
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Mark the task complete ","MarkTaskDone","Task", new {id = item.Id})
+                    }
+                    
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<div>
+    @*@Html.ActionLink("")*@
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) | *@
+    @Html.ActionLink("Add Task","AddTaskToConcretSubject","Task", new { id = Model.Id })| 
+    @Html.ActionLink("Show List End Task","EndTaskSubject","Task", new {id = Model.Id})|
+    @*<a asp-controller="Task" asp-action="AddTask">Add Task</a>|*@
+    <a asp-action="Index">Back to Management Center</a>||||||
+    @Html.ActionLink("Remove Subject", "RemoveSubject", new {id = Model.Id})
+</div>

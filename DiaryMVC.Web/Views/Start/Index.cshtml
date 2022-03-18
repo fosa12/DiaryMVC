@@ -1,0 +1,71 @@
+﻿@model DiaryMVC.Application.ViewModels.Task.IndexVm
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Management Center</h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            Subjects
+        </div>
+        <div class="col">
+            Tasks with the shortest deadline
+        </div>
+        <div class="col">
+            Alerts
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            @foreach (var item in Model.Subjects)
+            {
+                <div class="card" style="width: 12rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.ShortName)</h5>
+                        @Html.ActionLink("Menage Options and Details", "ViewSubject", new {id = item.Id})
+                    </div>
+                </div>
+            }
+            @Html.ActionLink("Add Subject", "AddSubject")|
+    <a asp-controller="task" asp-action="index">All tasks</a>
+        </div>
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Task Name</th>
+                        <th scope="col">Deadline</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Tasks)
+                    {
+                    <tr>      
+                        <th scope="row">@Html.DisplayFor(modelItem => item.Name)</th>
+                        <td>@Html.DisplayFor(modelItem => item.Deadline)</td>
+                        <td>
+                            @Html.ActionLink("Details", "ViewTask", "Task",  new { id=item.Id  })
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <ul class="list-group">
+                @foreach (var item in Model.Warnings)
+	{
+                <li class="list-group-item">@Html.DisplayFor(modelItem=> item.WarningString)</li>
+                @Html.ActionLink("EditTask","EditTask", "Task", new {id=item.TaskId})
+
+
+	}
+                
+            </ul>
+        </div>
+    </div>
+</div>

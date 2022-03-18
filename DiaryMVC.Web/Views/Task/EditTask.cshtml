@@ -1,0 +1,75 @@
+﻿@model DiaryMVC.Application.ViewModels.Task.EditTaskVm
+
+@{
+    ViewData["Title"] = "EditTask";
+}
+
+<h1>EditTask</h1>
+
+<h4>EditTaskVm</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditTask">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="hidden" asp-for="Id" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" readonly="true" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskType" class="control-label"></label>
+                <input asp-for="TaskType" class="form-control" readonly="true" />
+                <span asp-validation-for="TaskType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UniversitySubject" class="control-label"></label>
+                <input type="" asp-for="UniversitySubject" class="form-control" readonly="true" />
+                <span asp-validation-for="UniversitySubject" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deadline" class="control-label"></label>
+                <input asp-for="Deadline" class="form-control" readonly="true" />
+                <span asp-validation-for="Deadline" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserDeadline" class="control-label"></label>
+                <input asp-for="UserDeadline" class="form-control" />
+                <span asp-validation-for="UserDeadline" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="TaskEndDate" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="TaskTypeId" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="UniversitySubjectId" class="form-control" />
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsDone" readonly="true" /> @Html.DisplayNameFor(model => model.IsDone)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="InProgres" readonly="true"/> @Html.DisplayNameFor(model => model.InProgres)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

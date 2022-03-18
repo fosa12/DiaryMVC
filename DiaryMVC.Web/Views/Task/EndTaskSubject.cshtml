@@ -1,0 +1,61 @@
+﻿@model DiaryMVC.Application.ViewModels.Task.ListEndTaskVm
+
+@{
+    ViewData["Title"] = "EndTaskSubject";
+}
+
+<h1>Completed tasks </h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Task Name
+            </th>
+            <th>
+                Is Done
+            </th>    
+            <th>
+                Deadline
+            </th>
+            <th>
+                Task End Date
+            </th>
+            <th>
+                User Deadline
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Tasks) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem=> item.Deadline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem=> item.UserDeadline)
+            </td>
+@*            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+    @Html.ActionLink("Back to informiation about current subject", "ViewSubject", "Start", new {id = Model.UniversityId})|
+    <a asp-controller="Start" asp-action="Index">Back to Management Center</a>
+</div>
